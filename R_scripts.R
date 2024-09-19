@@ -85,11 +85,6 @@ dotchart(sort(CRF.varimp), xlab = "Conditional Variable Importance",
          cex = 1.2)       
 abline(v = abs(min(CRF.varimp)), lty = 2, lwd = 2, col = "red") 
 
-#########################
-# 일반화 성능 평가 과정 #
-#########################
-# CRF 모델의 OOB 정확도 계산
-# cforest의 OOB 정확도는 직접 계산해야 함
 oob_predictions_CRF <- predict(model_CRF, OOB = TRUE, type = "response") 
 oob_accuracy_CRF <- sum(oob_predictions_CRF == data$Realization) / nrow(data) 
 cat("CRF OOB Accuracy:", oob_accuracy_CRF, "\n") 
