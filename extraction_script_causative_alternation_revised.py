@@ -262,6 +262,3 @@ def main():
     write_file(intransitive_word_dict, folder_name, header, "intransitive")
 
 main()
-
-!tail ./sample_data/bnc_tagged.txt
-
